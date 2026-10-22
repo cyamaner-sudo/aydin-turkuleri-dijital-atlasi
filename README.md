@@ -11,7 +11,7 @@ TÜBİTAK 2204-A lise araştırma projesi (Türk Dili ve Edebiyatı) kapsamında
 
 ## Dosyalar
 - `index.html`: siteyi oluşturan tek dosya (veri içinde gömülüdür).
-- `veri/turkuler.json`: türkü bazında özet veri (hece, dize, bent, imge grupları, konuşan ses, kısa alıntı, kaynak bağlantısı).
+- `veri/turkuler.json`: türkü bazında özet veri (hece, dize, bent, imge grupları, konuşan ses, rol kodları, kısa alıntı, kaynak bağlantısı).
 
 ## Kaynak ve telif
 Sözler Repertükül - TÜRKÜPEDİA (Savaş Akbıyık) Aydın yöresi listesinden ve proje raporunda belirtilen yan kaynaklardan alınmıştır. Depoda yalnızca iki dizelik alıntılar bulunur; tam sözler için ilgili kaynak sayfalarına bağlantı verilmiştir. Rol kodları araştırmacının yorumudur.
