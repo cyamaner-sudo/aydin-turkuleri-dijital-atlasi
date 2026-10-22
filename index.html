@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aydın Türküleri Atlası</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Düzen: üstte künye bandı, altında üç sekme (Atlas, Bulgular, Sözlük). Renkler Aydın'ın incir moru, Menderes yeşili ve pamuk beyazından. */
+:root{--bg:#f4f5f1;--surface:#fff;--fg:#2a1d2e;--muted:#6b5f70;--line:#dcd8de;--accent:#2f6f66;--accent-fg:#fff;--plum:#4a2b4f;--red:#b23a2e;--chip:#ece9ee;
+--serif:'Alegreya',Georgia,serif;--sans:'Source Sans 3',system-ui,sans-serif;--mono:'IBM Plex Mono',ui-monospace,monospace}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a141c;--surface:#241b27;--fg:#efe9f0;--muted:#a99dae;--line:#3a2f3e;--accent:#6fc2b5;--accent-fg:#10201d;--plum:#d9b8de;--red:#e4806f;--chip:#33283a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a141c;--surface:#241b27;--fg:#efe9f0;--muted:#a99dae;--line:#3a2f3e;--accent:#6fc2b5;--accent-fg:#10201d;--plum:#d9b8de;--red:#e4806f;--chip:#33283a;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 var(--sans);padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto}
+header{padding-block:28px 8px}
+.kicker{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(32px,6vw,52px)/1.05 var(--serif);margin:6px 0 10px;color:var(--plum);text-wrap:balance}
+.lead{max-width:62ch;color:var(--muted);margin:0 0 16px}
+.stats{display:flex;flex-wrap:wrap;gap:6px 22px;font:500 13px var(--mono);color:var(--muted);padding-block:10px;border-block:1px solid var(--line)}
+.stats b{color:var(--fg);font-weight:500}
+nav{display:flex;gap:4px;margin-block:18px 14px;overflow-x:auto}
+nav button{font:600 15px var(--sans);padding:9px 16px;border:1px solid var(--line);background:transparent;color:var(--fg);border-radius:6px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected=true]{background:var(--plum);color:var(--bg);border-color:var(--plum)}
+button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.tools{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
+@media(min-width:720px){.tools{grid-template-columns:2fr 1fr 1fr 1fr}}
+input,select{font:16px var(--sans);padding:10px 12px;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:6px;width:100%;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.chip{font:600 13px var(--sans);padding:5px 11px;border:1px solid var(--line);background:var(--chip);color:var(--fg);border-radius:99px;cursor:pointer}
+.chip[aria-pressed=true]{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.count{font:500 13px var(--mono);color:var(--muted);margin-bottom:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 14px 12px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card h3{font:700 20px/1.2 var(--serif);margin:0;color:var(--plum)}
+.meta{display:flex;flex-wrap:wrap;gap:4px 12px;font:400 12px var(--mono);color:var(--muted)}
+.meta a{color:var(--accent)}
+.q{font:italic 500 16px/1.4 var(--serif);margin:0;color:var(--fg)}
+.q span{display:block}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tag{font:600 11px var(--sans);padding:2px 8px;border-radius:99px;background:var(--chip);color:var(--muted)}
+.tag.ses{background:transparent;border:1px solid var(--line)}
+.bar{display:flex;gap:3px;align-items:flex-end;height:26px}
+.bar i{display:block;width:6px;background:var(--accent);opacity:.8;border-radius:1px}
+.row{display:grid;grid-template-columns:160px 1fr 54px;align-items:center;gap:10px;font-size:14px;margin-bottom:6px}
+@media(max-width:560px){.row{grid-template-columns:110px 1fr 44px}}
+.row .t{height:14px;background:var(--chip);border-radius:2px;overflow:hidden}
+.row .t i{display:block;height:100%;background:var(--accent)}
+.row .t.w i{background:var(--red)}
+.row .t.m i{background:var(--plum)}
+.row .n{font:500 13px var(--mono);text-align:right}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;margin-bottom:14px}
+.panel h2{font:700 24px var(--serif);margin:0 0 4px;color:var(--plum)}
+.panel p{color:var(--muted);margin:0 0 14px;max-width:64ch}
+.two{display:grid;gap:14px;grid-template-columns:1fr}
+@media(min-width:820px){.two{grid-template-columns:1fr 1fr}}
+.sozluk{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.w{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.w b{font:700 20px var(--serif);color:var(--plum)}
+.w small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.w em{font:italic 500 15px var(--serif)}
+footer{margin-top:28px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);max-width:70ch}
+footer a{color:var(--accent)}
+.note{font-size:13px;color:var(--muted);margin-top:8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="kicker">Lise araştırma projesi · Türk Dili ve Edebiyatı</div>
+<h1>Aydın Türküleri Atlası</h1>
+<p class="lead">Aydın yöresinden 49 türkünün sözleri; hece ölçüsü, bent düzeni, imgeler ve konuşan sese göre taranabilir. Yöre ağzından kelimeler ayrı bir sözlükte toplandı.</p>
+<div class="stats"><span><b>49</b> türkü</span><span><b>578</b> dize</span><span><b>184</b> bent</span><span><b id="nk"></b> yerel kelime</span></div>
+</header>
+<nav role="tablist"><button role="tab" id="t-atlas" aria-selected="true">Atlas</button><button role="tab" id="t-bulgular" aria-selected="false">Bulgular</button><button role="tab" id="t-sozluk" aria-selected="false">Aydın ağzı sözlüğü</button></nav>
+
+<section id="atlas">
+<div class="tools">
+<input id="q" type="search" placeholder="Türkü adı ya da söz ara" aria-label="Ara">
+<select id="fses" aria-label="Konuşan ses"><option value="">Konuşan ses: hepsi</option><option>Erkek</option><option>Kadın</option><option>Diyalog</option><option>Karma</option><option>Belirsiz</option></select>
+<select id="fhece" aria-label="Baskın hece"><option value="">Baskın hece: hepsi</option></select>
+<select id="ftur" aria-label="Tür"><option value="">Tür: hepsi</option><option>Kırık</option><option>Uzun</option><option>Repertuar dışı</option></select>
+</div>
+<div class="chips" id="chips" aria-label="İmge grupları"></div>
+<div class="count" id="count"></div>
+<div class="grid" id="grid"></div>
+</section>
+
+<section id="bulgular" hidden>
+<div class="two">
+<div class="panel"><h2>İmge grupları</h2><p>Sözlerinde bu gruptan en az bir sözcük geçen türkü sayısı (n = 49).</p><div id="b-imge"></div></div>
+<div class="panel"><h2>Baskın hece</h2><p>Dizelerin çoğunun hece sayısı. Yedi, sekiz ve on bir hece 32 türküde baskındır.</p><div id="b-hece"></div></div>
+</div>
+<div class="two">
+<div class="panel"><h2>Konuşan ses</h2><p>Türküyü kimin ağzından duyuyoruz?</p><div id="b-ses"></div></div>
+<div class="panel"><h2>Toplumsal roller</h2><p>Her kategoride kaç türküde görüldüğü. Kadın kırmızı, erkek mor. Bir türkü birden fazla kategoriye girebilir.</p><div id="b-rol"></div><div class="note">Kodlar araştırmacının yorumudur.</div></div>
+</div>
+</section>
+
+<section id="sozluk" hidden>
+<div class="tools" style="grid-template-columns:1fr"><input id="qs" type="search" placeholder="Kelime ara" aria-label="Kelime ara"></div>
+<div class="sozluk" id="sg"></div>
+<p class="note">Anlamlar Türkçe sözlük bilgisine ve türkünün bağlamına göre verildi. “Aydın ağzı” işaretli kelimeler sözlerdeki söyleyişe özgüdür.</p>
+</section>
+
+<footer>Sözler, Repertükül - TÜRKÜPEDİA (Savaş Akbıyık) Aydın yöresi listesinden ve raporda belirtilen yan kaynaklardan alınmıştır. Burada yalnızca kısa alıntılar gösterilir; tam söz için kartlardaki Repertükül bağlantısına gidin. Çözümleme tek araştırmacı tarafından yapılmış bir içerik analizidir.</footer>
+</div>
+<script>
+const D=[{"n": 1, "ad": "Her Gün Sarhoş Su Aydın'ın Uşağı", "no": "1617", "tur": "Kırık", "dize": 12, "bent": 6, "hece": 7, "ses": "Erkek", "imge": ["Su", "Beden"], "ex": ["Hergün serhoş şu Aydın'ın uşağı", "Al kanlara boyanmış (da) tarabuluş kuşağı"], "url": "https://www.repertukul.com/HERGUN-SARHOS-SU-AYDIN-IN-USAGI-1617"}, {"n": 2, "ad": "Genç Osman Dediğin Bir Küçük Uşak", "no": "451", "tur": "Kırık", "dize": 16, "bent": 8, "hece": 11, "ses": "Belirsiz", "imge": ["Hayvan", "Silah ve efelik"], "ex": ["(aman) genç Osman dediğin bir küçük uşak", "Beline bağlamış ibrişim kuşak (of of)"], "url": "https://www.repertukul.com/GENC-OSMAN-DEDIGIN-BIR-KUCUK-USAK-451"}, {"n": 3, "ad": "Altı Kızlar", "no": "487", "tur": "Kırık", "dize": 12, "bent": 3, "hece": 8, "ses": "Belirsiz", "imge": ["Beden"], "ex": ["Altı kızlar altı kızlar", "Altı kızın biri Fatma"], "url": "https://www.repertukul.com/ALTI-KIZLAR-487"}, {"n": 4, "ad": "Çine Çayı Taşkın Olur", "no": "2482", "tur": "Kırık", "dize": 11, "bent": 5, "hece": 8, "ses": "Belirsiz", "imge": ["Su", "Beden", "Duygu"], "ex": ["ÇİNE (de) ÇAYI (güzelim aman) TAŞKIN OLUR", "GÜZEL SEVME (a yarim aman) ŞAŞKIN OLUR"], "url": "https://www.repertukul.com/CINE-CAYI-TASKIN-OLUR-2482"}, {"n": 5, "ad": "Emir'im Suya Gider Dedi Doldurur", "no": "1014", "tur": "Kırık", "dize": 8, "bent": 3, "hece": 12, "ses": "Belirsiz", "imge": ["Su", "Hayvan", "Beden"], "ex": ["Emir'im suya gider desdi doldurur", "Desdinin kulpuna emir'im bülbül de kondurur"], "url": "https://www.repertukul.com/EMIR-IM-SUYA-GIDER-DESDI-DOLDURUR-1014"}, {"n": 6, "ad": "Abalımın Cepkeni Safı Sırma İlıklı", "no": "941", "tur": "Kırık", "dize": 8, "bent": 4, "hece": 14, "ses": "Belirsiz", "imge": ["Beden", "Silah ve efelik", "Duygu"], "ex": ["Abalımın cepkeni safi sırma ilikli", "Abalımı vuranlar on iki de Girit'li"], "url": "https://www.repertukul.com/ABALIMIN-CEPKENI-SAFI-SIRMA-ILIKLI-941"}, {"n": 7, "ad": "Aman Değirmenci Değirmenci", "no": "3685", "tur": "Kırık", "dize": 16, "bent": 8, "hece": 10, "ses": "Kadın", "imge": ["Su", "Bitki", "Beden"], "ex": ["Aman değirmancı değirmancı", "Kuzum değirmancı değirmancı"], "url": "https://www.repertukul.com/AMAN-DEGIRMENCI-DEGIRMENCI-3685"}, {"n": 8, "ad": "At Bağladım Akkaya'nın Dibine", "no": "3544", "tur": "Kırık", "dize": 5, "bent": 2, "hece": 11, "ses": "Erkek", "imge": ["Hayvan", "Silah ve efelik", "Renk", "Duygu"], "ex": ["AT BAĞLADIM AK KAYANIN DİBİNE (hadi len efem)", "Mekan mı tuttun güzel Aydın'ın (yosmam da) damına"], "url": "https://www.repertukul.com/AT-BAGLADIM-AKKAYA-NIN-DIBINE-3544"}, {"n": 9, "ad": "Baba Aydın'a Vardın mı", "no": "3455", "tur": "Kırık", "dize": 8, "bent": 4, "hece": 8, "ses": "Kadın", "imge": [], "ex": ["Baba Aydın'a vardın mı", "Bana çeyizimi aldın mı"], "url": "https://www.repertukul.com/BABA-AYDIN-A-VARDIN-MI-3455"}, {"n": 10, "ad": "Bir Gemim Var Salıverin Engine", "no": "148", "tur": "Kırık", "dize": 8, "bent": 3, "hece": 15, "ses": "Erkek", "imge": ["Silah ve efelik", "Duygu"], "ex": ["Bir gemim var aman salı verin engine", "Şimdi de rağbet aman yar güzel ile zengine"], "url": "https://www.repertukul.com/BIR-GEMIM-VAR-SALIVERIN-ENGINE-148"}, {"n": 11, "ad": "Çaktım Çaktım Yanmadı", "no": "284", "tur": "Kırık", "dize": 13, "bent": 4, "hece": 7, "ses": "Belirsiz", "imge": ["Silah ve efelik"], "ex": ["Çaktım çaktım yanmadı", "Yosmanın kızı"], "url": "https://www.repertukul.com/CAKTIM-CAKTIM-YANMADI-284"}, {"n": 12, "ad": "Çay İçinin Milleri", "no": "551", "tur": "Kırık", "dize": 12, "bent": 4, "hece": 8, "ses": "Kadın", "imge": ["Su", "Dağ ve yayla"], "ex": ["ÇAY İÇİNİN MİLLERİ (ninnay da ninnari nannari nam)", "FATMA (da) GELİNİN DİLLERİ (ninnay nay lay lay lay lay lam)"], "url": "https://www.repertukul.com/CAY-ICININ-MILLERI-551"}, {"n": 13, "ad": "Çıvrıl Köprüsünde Attımı Bağladım", "no": "4512", "tur": "Kırık", "dize": 8, "bent": 3, "hece": 11, "ses": "Erkek", "imge": ["Dağ ve yayla", "Bitki", "Hayvan", "Silah ve efelik", "Renk", "Yapı ve yol", "Duygu"], "ex": ["Çivril köprüsünde atımı bağladım", "Mavzerim paslanmış onu yağladım"], "url": "https://www.repertukul.com/CIVRIL-KOPRUSUNDE-ATIMI-BAGLADIM-4512"}, {"n": 14, "ad": "Denizlerin Kumuyum", "no": "149", "tur": "Kırık", "dize": 12, "bent": 3, "hece": 7, "ses": "Erkek", "imge": ["Su", "Bitki", "Beden"], "ex": ["Denizlerin kumuyum", "Zürhe'm balıkların puluyum"], "url": "https://www.repertukul.com/DENIZLERIN-KUMUYUM-149"}, {"n": 15, "ad": "Dumanı da Vardır Şu Dağların Başında", "no": "3432", "tur": "Kırık", "dize": 10, "bent": 3, "hece": 12, "ses": "Erkek", "imge": ["Su", "Dağ ve yayla", "Beden"], "ex": ["Dumanı da vardır şu dağların başında", "Gönlüm galdı toprağında daşında"], "url": "https://www.repertukul.com/DUMANI-DA-VARDIR-SU-DAGLARIN-BASINDA-3432"}, {"n": 16, "ad": "Eklemedir Koca Konak Ekleme", "no": "1009", "tur": "Kırık", "dize": 18, "bent": 6, "hece": 12, "ses": "Erkek", "imge": ["Beden", "Yapı ve yol", "Duygu"], "ex": ["Eklemedir koca konak ekleme", "Nazlı da yarim yine geldi aklıma"], "url": "https://www.repertukul.com/EKLEMEDIR-KOCA-KONAK-EKLEME-1009"}, {"n": 17, "ad": "Fesimin Kozasına", "no": "111", "tur": "Kırık", "dize": 14, "bent": 4, "hece": 7, "ses": "Erkek", "imge": ["Bitki", "Silah ve efelik", "Renk", "Duygu"], "ex": ["Fesimin kozasına", "Can sever bazısına"], "url": "https://www.repertukul.com/FESIMIN-KOZASINA-111"}, {"n": 18, "ad": "Germenciynen Balatçığın Arası", "no": "1038", "tur": "Kırık", "dize": 8, "bent": 3, "hece": 11, "ses": "Erkek", "imge": ["Silah ve efelik"], "ex": ["Germenciynen balatcığın arası (aman aman of)", "Yaktı beni dom dom kurşun yarası"], "url": "https://www.repertukul.com/GERMENCIYNEN-BALATCIGIN-ARASI-1038"}, {"n": 19, "ad": "İçme Rakıyı Zarar", "no": "1520", "tur": "Kırık", "dize": 14, "bent": 4, "hece": 7, "ses": "Kadın", "imge": ["Su", "Beden", "Renk", "Duygu"], "ex": ["İÇME RAKIYI ZARAR (fidan boylum)", "Kız zülfünü tarar"], "url": "https://www.repertukul.com/ICME-RAKIYI-ZARAR-1520"}, {"n": 20, "ad": "Müzeyyen'in Geydiği Al Değil Pembe", "no": "2204", "tur": "Kırık", "dize": 6, "bent": 3, "hece": 12, "ses": "Erkek", "imge": ["Dağ ve yayla", "Renk", "Yapı ve yol"], "ex": ["Müzeyyen'in geydiği al değil pembe", "Vallah billah hovarda Müzeyyen gönlüm var sende"], "url": "https://www.repertukul.com/MUZEYYEN-IN-GEYDIGI-AL-DEGIL-PEMBE-2204"}, {"n": 21, "ad": "Pazardan Aldım Halı", "no": "1118", "tur": "Kırık", "dize": 10, "bent": 3, "hece": 7, "ses": "Belirsiz", "imge": ["Bitki", "Beden", "Yapı ve yol"], "ex": ["Pazardan aldım halı", "Sevdiğim hurma dalı"], "url": "https://www.repertukul.com/PAZARDAN-ALDIM-HALI-1118"}, {"n": 22, "ad": "Isparta'dan Çıktım Başım Selamet", "no": "", "tur": "Kırık", "dize": 10, "bent": 1, "hece": 12, "ses": "Erkek", "imge": ["Silah ve efelik", "Duygu"], "ex": ["Isparta'dan çıktım başım selâmet", "Çivril köprüsüne gelince koptu kıyamet"], "url": "https://www.asikveysel.com/turku-sozleri/ispartadan-ciktim-basim-selamaet.htm"}, {"n": 23, "ad": "Şu Dalma'dan Geçtin mi", "no": "801", "tur": "Kırık", "dize": 14, "bent": 4, "hece": 7, "ses": "Belirsiz", "imge": ["Su", "Beden", "Silah ve efelik"], "ex": ["Şu Dalma'dan geçtin mi", "Soğuk sular içtin mi"], "url": "https://www.repertukul.com/SU-DALMA-DAN-GECTIN-MI-801"}, {"n": 24, "ad": "Şu Dalma'nın Dağını Duman Bürüdü", "no": "1494", "tur": "Kırık", "dize": 9, "bent": 4, "hece": 14, "ses": "Erkek", "imge": ["Beden", "Yapı ve yol", "Duygu"], "ex": ["Şu Dalma'nın aman dağını da duman da bürüdü", "Yar senin için aman civan ömrüm çürüdü"], "url": "https://www.repertukul.com/SU-DALMA-NIN-DAGINI-DUMAN-BURUDU-1494"}, {"n": 25, "ad": "Aydın'ın İçinde Kapalı Çarşı (Cafer Efe)", "no": "", "tur": "Kırık", "dize": 8, "bent": 2, "hece": 11, "ses": "Erkek", "imge": ["Beden", "Silah ve efelik", "Renk", "Yapı ve yol", "Duygu"], "ex": ["Aydın'ın içinde bir kapalı çarşı", "Anne ben gidiyorum düşmana karşı"], "url": ""}, {"n": 26, "ad": "Eğrem Büğrem Gavrasar'ın Yolları", "no": "1021", "tur": "Kırık", "dize": 12, "bent": 3, "hece": 12, "ses": "Erkek", "imge": ["Beden", "Renk"], "ex": ["Eğrem de büğrem Gavrasar'ın yolları", "Gırılı da vermiş mor karanfilin dalları"], "url": "https://turkuarsivi.com/turku/egrem-bugrem-gavrasarin-yollari"}, {"n": 27, "ad": "Kadı Kuyusu'dur Bizim Köyümüz", "no": "4267", "tur": "Kırık", "dize": 10, "bent": 2, "hece": 11, "ses": "Kadın", "imge": ["Dağ ve yayla", "Bitki", "Hayvan", "Duygu"], "ex": ["Kadı Kuyusu'dur bizim bizim köyümüz", "Germenciklidir aslımız soyumuz"], "url": "https://sazsoz.app/turku/kadi-kuyusudur-bizim-koyumuz"}, {"n": 28, "ad": "Menderes Kıyısında Kunduram Kaydı", "no": "", "tur": "Kırık", "dize": 12, "bent": 4, "hece": 12, "ses": "Erkek", "imge": ["Su"], "ex": ["Menderes gıyısında gunduram gaydı", "Nişan çevrelerimi dalgalar aldı"], "url": "https://www.turkudostlari.net/soz.asp?turku=20120"}, {"n": 29, "ad": "Minarenin Alemi", "no": "2868", "tur": "Kırık", "dize": 8, "bent": 2, "hece": 7, "ses": "Erkek", "imge": ["Hayvan", "Beden", "Renk", "Yapı ve yol"], "ex": ["Minarenin alemi aman aman", "Kaşları kudret kalemi"], "url": "https://www.turkudostlari.net/soz.asp?turku=11057"}, {"n": 30, "ad": "Suya İner Tavşanlar (Minnoş)", "no": "4616", "tur": "Kırık", "dize": 18, "bent": 6, "hece": 7, "ses": "Erkek", "imge": ["Su", "Hayvan", "Beden"], "ex": ["Suya iner tavşanlar", "Yine oldu akşamlar (of)"], "url": "https://www.turkudostlari.net/soz.asp?turku=19517"}, {"n": 31, "ad": "Tilkilik'te Çevirdiler Benim Yolumu", "no": "", "tur": "Kırık", "dize": 8, "bent": 2, "hece": 13, "ses": "Erkek", "imge": ["Dağ ve yayla", "Beden", "Yapı ve yol", "Duygu"], "ex": ["Tilkilik'te çevirdiler benim yoluma", "Beş on polis bağladılar benim koluma"], "url": ""}, {"n": 32, "ad": "Top Yatağın Önü Gayfe", "no": "1510", "tur": "Kırık", "dize": 8, "bent": 3, "hece": 8, "ses": "Belirsiz", "imge": ["Su", "Renk"], "ex": ["Top yatağın önü gayfe", "Ah oturmuşlar tayfe tayfe"], "url": "https://www.repertukul.com/TOP-YATAGIN-ONU-GAYFE-1510"}, {"n": 33, "ad": "Goca Dağın Başında Bir Ulu Meşe", "no": "832", "tur": "Uzun", "dize": 20, "bent": 5, "hece": 12, "ses": "Karma", "imge": ["Dağ ve yayla", "Bitki", "Beden"], "ex": ["Goca dağın başında bir ulu meşe", "Meşenin dibine oturmuş bir gelin Ayşe"], "url": "https://anadoluezgileri.com/turkuler/goca-dagin-basinda-bir-ulu-mese"}, {"n": 34, "ad": "Kadı Kuyusudur Bizim Kuyumuz", "no": "657", "tur": "Uzun", "dize": 12, "bent": 4, "hece": 12, "ses": "Erkek", "imge": ["Dağ ve yayla", "Bitki", "Beden", "Renk", "Yapı ve yol", "Duygu"], "ex": ["Kadı kuyusudur bizim de kuyumuz", "İçindedir içme de suyumuz"], "url": "https://anadoluezgileri.com/turkuler/kadi-kuyusudur-bizim-kuyumuz"}, {"n": 35, "ad": "Şakir Efendi Derler Geldim Yanına", "no": "351", "tur": "Uzun", "dize": 20, "bent": 8, "hece": 11, "ses": "Erkek", "imge": ["Beden", "Silah ve efelik", "Renk", "Duygu"], "ex": ["Şakir efendi derler de geldim yanına", "Katillik düşer mi senin şanına"], "url": "https://anadoluezgileri.com/turkuler/sakir-efendi-derler-geldim-yanina"}, {"n": 36, "ad": "Alıverin Martinimi Odamdan", "no": "", "tur": "Repertuar dışı", "dize": 6, "bent": 3, "hece": 11, "ses": "Erkek", "imge": ["Beden", "Silah ve efelik", "Duygu"], "ex": ["Alıverin martinime odamdan", "Evraklarım okunuyor idamdan (yandım aman aman)"], "url": "https://www.youtube.com/watch?v=vczEI1fDqCw"}, {"n": 37, "ad": "Arabamda Dört Teker Ayşe'm", "no": "809", "tur": "Repertuar dışı", "dize": 20, "bent": 4, "hece": 7, "ses": "Kadın", "imge": ["Bitki", "Beden", "Silah ve efelik"], "ex": ["Arabamda dört teker", "Yayladan ot çeker"], "url": "https://anadoluezgileri.com/turkuler/arabamda-dort-teker-aysem"}, {"n": 38, "ad": "Ay Doğunca Çine'den Selime'm", "no": "1380", "tur": "Repertuar dışı", "dize": 12, "bent": 3, "hece": 7, "ses": "Erkek", "imge": ["Beden", "Yapı ve yol"], "ex": ["Ay doğunca Çine'den", "Çık sen gel pencereden"], "url": "https://turkuarsivi.com/turku/ay-dogunca-cineden-selimem"}, {"n": 39, "ad": "Ayağına Potini Giymiş Yürümüş (Mendirez)", "no": "", "tur": "Repertuar dışı", "dize": 12, "bent": 4, "hece": 11, "ses": "Belirsiz", "imge": ["Su", "Beden", "Renk", "Duygu"], "ex": ["Ayağına potini giymiş yürümüş", "Sırma saçlarını çözmüş sürümüş"], "url": ""}, {"n": 40, "ad": "Çakmağımın Taşı Yok", "no": "811", "tur": "Repertuar dışı", "dize": 16, "bent": 4, "hece": 7, "ses": "Kadın", "imge": ["Hayvan", "Beden"], "ex": ["Çakmağımın taşı yok", "Hanlarında aşı yok"], "url": "https://www.repertukul.com/CAKMAGIMIN-TASI-YOK-811"}, {"n": 41, "ad": "Değirmenci Dayı", "no": "817", "tur": "Repertuar dışı", "dize": 32, "bent": 8, "hece": 7, "ses": "Diyalog", "imge": ["Su", "Bitki", "Beden", "Renk", "Yapı ve yol"], "ex": ["Değirmenci dayı", "Al yanağım senin olsun"], "url": "https://www.repertukul.com/DEGIRMENCI-DAYI-817"}, {"n": 42, "ad": "Güdüşlü'nün Çeşmesi", "no": "823", "tur": "Repertuar dışı", "dize": 10, "bent": 3, "hece": 7, "ses": "Kadın", "imge": ["Su", "Renk"], "ex": ["Güdüşlü'nün çeşmesi", "Ne hoş oluyor içmesi"], "url": "https://www.repertukul.com/GUDUSLU-NUN-CESMESI-823"}, {"n": 43, "ad": "Hadaman Hadaman", "no": "1643", "tur": "Repertuar dışı", "dize": 8, "bent": 2, "hece": 14, "ses": "Erkek", "imge": ["Beden", "Silah ve efelik", "Renk"], "ex": ["Hadaman hadaman gargeca kestim belinden", "Ben sene sevdim endeki serhoş dilinden"], "url": "https://anadoluezgileri.com/turkuler/hadaman-hadaman"}, {"n": 44, "ad": "Kalenin Başında Mısın Leylim", "no": "825", "tur": "Repertuar dışı", "dize": 14, "bent": 4, "hece": 8, "ses": "Belirsiz", "imge": ["Beden", "Renk", "Yapı ve yol", "Duygu"], "ex": ["KALENİN BAŞINDA MISIN Leylim Leylim Yar", "Üçgöz'ün ardında mısın"], "url": "https://anadoluezgileri.com/turkuler/kalenin-basinda-misin-leylim"}, {"n": 45, "ad": "Koca Dağdan Aşırdılar", "no": "826", "tur": "Repertuar dışı", "dize": 16, "bent": 4, "hece": 8, "ses": "Erkek", "imge": ["Su", "Bitki", "Renk", "Duygu"], "ex": ["Goca dağdan aşırdılar", "Vatanımdan kaçırdılar"], "url": "https://www.repertukul.com/KOCA-DAGDAN-ASIRDILAR-826"}, {"n": 46, "ad": "Minareden At Beni", "no": "827", "tur": "Repertuar dışı", "dize": 12, "bent": 3, "hece": 7, "ses": "Erkek", "imge": ["Hayvan", "Beden", "Yapı ve yol"], "ex": ["Minareden at beni", "En aşara dut beni"], "url": "https://www.repertukul.com/MINAREDEN-AT-BENI-827"}, {"n": 47, "ad": "Ovanın Darısına", "no": "829", "tur": "Repertuar dışı", "dize": 6, "bent": 2, "hece": 7, "ses": "Erkek", "imge": ["Dağ ve yayla", "Bitki", "Beden"], "ex": ["Ovanın darısına", "Sel almış yarısına"], "url": "https://www.repertukul.com/OVANIN-DARISINA-829"}, {"n": 48, "ad": "Paşa Yaylası'nın Suları Akımıyor", "no": "1055", "tur": "Repertuar dışı", "dize": 10, "bent": 2, "hece": 12, "ses": "Erkek", "imge": ["Su", "Dağ ve yayla", "Bitki", "Yapı ve yol", "Duygu"], "ex": ["Paşa yaylası'nın suları akmıyor", "Yar bana küsmüş de yüzüme de bakmıyor"], "url": "https://anadoluezgileri.com/turkuler/pasa-yaylasinin-sulari-akmiyor"}, {"n": 49, "ad": "Tabakhane Deresi Kışın Akıyor", "no": "814", "tur": "Repertuar dışı", "dize": 6, "bent": 2, "hece": 12, "ses": "Erkek", "imge": ["Su", "Silah ve efelik"], "ex": ["Tabakhane deresi kışın akıyor", "Suları da a yarim canlar yakıyor"], "url": "https://anadoluezgileri.com/turkuler/tabakhane-deresi-kisin-akiyor"}];
+const SOZ=[
+["Civan","Genç, taze","Şu Dalma’nın Dağını Duman Bürüdü",0],["Dalma","Aydın’ın Dalama Köyü","Şu Dalma’nın Dağını Duman Bürüdü",0],["Tayfe","Tayfa","Top Yatağın Önü Gayfe",0],["Gayfe","Kahve","Top Yatağın Önü Gayfe",1],["Gıreb","Krep: çok bükümlü iplikle dokunmuş ince kumaş","Güdüşlü’nün Çeşmesi",0],["Eğrem büğrem","Eğri büğrü","Eğrem Büğrem Gavrasar’ın Yolları",0],["Gavrasar","Yer adı","Eğrem Büğrem Gavrasar’ın Yolları",0],["Had’aman","Hadi aman","Eğrem Büğrem Gavrasar’ın Yolları",0],["Gargaç","Karağaç","Hadaman Hadaman",0],["Gole","Kolay","Hadaman Hadaman",0],["Endeki","İşte, oradaki","Hadaman Hadaman",0],
+["Galdım","Kalktım","Eğrem Büğrem Gavrasar’ın Yolları",1],["Goca","Koca, büyük","Goca Dağın Başında Bir Ulu Meşe",1],["Gunduram","Kunduram: ayakkabı","Menderes Kıyısında Kunduram Kaydı",1],["Nenni","Ninni","Minareden At Beni",1],["Oleydim","Olsaydım","Suya İner Tavşanlar",1],["Yosma","Süslü, şuh genç kadın","Çaktım Çaktım Yanmadı",0],["Martin","Martini tüfeği","Alıverin Martinimi Odamdan",0],["Cepken","Bol kollu, kısa, işlemeli yelek","Abalımın Cepkeni Safı Sırma İlıklı",0],["Mapus","Hapishane","Tilkilik’te Çevirdiler Benim Yolumu",0],["Cehiz","Çeyiz","Menderes Kıyısında Kunduram Kaydı",0],["Efe","Ege’de yiğit, silahlı halk kahramanı","Arabamda Dört Teker Ayşe’m",0]
+];
+const $=s=>document.querySelector(s);
+const ak=[...new Set(D.flatMap(o=>o.imge))].sort();
+let imge=new Set();
+function tl(s){return s.replace(/İ/g,'i').replace(/I/g,'ı').toLowerCase()}
+const heceler=[...new Set(D.map(o=>o.hece))].sort((a,b)=>a-b);
+$('#fhece').insertAdjacentHTML('beforeend',heceler.map(h=>`<option value="${h}">${h} heceli</option>`).join(''));
+$('#chips').innerHTML=ak.map(a=>`<button class="chip" aria-pressed="false" data-a="${a}">${a}</button>`).join('');
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;const a=b.dataset.a;imge.has(a)?imge.delete(a):imge.add(a);b.setAttribute('aria-pressed',imge.has(a));draw()});
+function esc(s){return s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function draw(){
+ const q=tl($('#q').value.trim()),s=$('#fses').value,h=$('#fhece').value,t=$('#ftur').value;
+ const L=D.filter(o=>(!s||o.ses===s)&&(!h||o.hece==h)&&(!t||o.tur===t)&&[...imge].every(a=>o.imge.includes(a))&&(!q||tl(o.ad+' '+o.ex.join(' ')).includes(q)));
+ $('#count').textContent=L.length+' / 49 türkü';
+ $('#grid').innerHTML=L.map(o=>`<article class="card"><h3>${esc(o.ad)}</h3>
+ <div class="meta"><span>${o.hece} heceli</span><span>${o.dize} dize · ${o.bent} bent</span><span>${o.tur}</span>${o.url?`<a href="${o.url}" target="_blank" rel="noopener">${o.url.includes('repertukul')?'Repertükül no '+o.no:'Söz kaynağı'}</a>`:''}</div>
+ <p class="q">${o.ex.map(x=>`<span>“${esc(x)}”</span>`).join('')}</p>
+ <div class="tags"><span class="tag ses">Ses: ${o.ses}</span>${o.imge.map(a=>`<span class="tag">${a}</span>`).join('')}</div></article>`).join('')||'<p class="note">Bu süzgece uyan türkü yok.</p>';
+}
+['#q','#fses','#fhece','#ftur'].forEach(i=>$(i).addEventListener('input',draw));
+function bars(el,items,max,cls){ $(el).innerHTML=items.map(([k,v])=>`<div class="row"><span>${k}</span><div class="t ${cls||''}"><i style="width:${v/max*100}%"></i></div><span class="n">${v}</span></div>`).join('')}
+const cnt=(f)=>{const m={};D.forEach(o=>[].concat(f(o)).forEach(k=>m[k]=(m[k]||0)+1));return m};
+bars('#b-imge',Object.entries(cnt(o=>o.imge)).sort((a,b)=>b[1]-a[1]),49);
+bars('#b-hece',Object.entries(cnt(o=>o.hece+' heceli')).sort((a,b)=>parseInt(a[0])-parseInt(b[0])),20);
+bars('#b-ses',Object.entries(cnt(o=>o.ses)).sort((a,b)=>b[1]-a[1]),49,'m');
+const K=[['Güzellik ve beden',29],['Naz',13],['Bekleyen, gelin',11],['Su başı, üretim mekânı',13],['Ev içi, yakın çevre',13],['Çeyiz, evlilik',9],['İrade: reddeden, seçen',10],['Bakım ve hizmet',7]];
+const E=[['Duygusal, ağlayan, vurgun',29],['Güç, efelik, silah',16],['Asker, gurbetteki',11],['Talip, eş seçen',13],['Dağ, yayla',9],['Gurbet, asker, yol',9],['Mapus, idam',8],['Savaş alanı',6]];
+$('#b-rol').innerHTML='';
+bars('#b-rol',K,35,'w');$('#b-rol').insertAdjacentHTML('beforeend','<div style="height:10px"></div>');
+const tmp=document.createElement('div');tmp.id='b-rol2';$('#b-rol').appendChild(tmp);
+tmp.innerHTML=E.map(([k,v])=>`<div class="row"><span>${k}</span><div class="t m"><i style="width:${v/35*100}%"></i></div><span class="n">${v}</span></div>`).join('');
+function drawS(){const q=tl($('#qs').value.trim());
+ $('#sg').innerHTML=SOZ.filter(w=>!q||tl(w[0]+' '+w[1]).includes(q)).map(w=>`<div class="w"><b>${w[0]}</b> ${w[3]?'<span class="tag">Aydın ağzı</span>':''}<div>${w[1]}</div><small>Geçtiği türkü: <em>${w[2]}</em></small></div>`).join('')}
+$('#qs').addEventListener('input',drawS);$('#nk').textContent=SOZ.length;
+const T=['atlas','bulgular','sozluk'];
+function show(id){T.forEach(t=>{$('#'+t).hidden=t!==id;$('#t-'+t).setAttribute('aria-selected',t===id)});try{history.replaceState(null,'','#'+id)}catch(e){}}
+T.forEach(t=>$('#t-'+t).addEventListener('click',()=>show(t)));
+const h=(location.hash||'').slice(1);if(T.includes(h))show(h);
+draw();drawS();
+</script>
+</body>
+</html>
